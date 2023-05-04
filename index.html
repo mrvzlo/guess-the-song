@@ -1,0 +1,146 @@
+<html>
+   <head>
+      <title>Угадай мелодию</title>
+      <link rel="stylesheet" href="main.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   </head>
+   <body>
+      <div>
+         <div class="stages">
+            <button class="stage s-1">1 Этап</button>
+            <button class="stage s-2">2 Этап</button>
+         </div>
+         <table class="songs tab-1">
+            <tr>
+               <th>Диснеевские мультики</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+            <tr>
+               <th>Классическая музыка</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+            <tr>
+               <th>Это ваше аниме</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+            <tr>
+               <th>Победители Евровидения</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+         </table>
+         <table class="songs tab-2">
+            <tr>
+               <th>Видеоигры</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+            <tr>
+               <th>Устаревшие мемы</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+            <tr>
+               <th>Советский синематографъ</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+            <tr>
+               <th>Стыдно знать</th>
+               <td>200</td>
+               <td>300</td>
+               <td>400</td>
+               <td>500</td>
+            </tr>
+         </table>
+         <table class="score">
+            <tr>
+               <td>
+                  <div>
+                     <button data-val="-1">➖</button>
+                     <div class="letter">β</div>
+                     <button data-val="1">➕</button>
+                  </div>
+                  <input value="0" readonly />
+               </td>
+               <td>
+                  <div>
+                     <button data-val="-1">➖</button>
+                     <div class="letter">ξ</div>
+                     <button data-val="1">➕</button>
+                  </div>
+                  <input value="0" readonly />
+               </td>
+               <td>
+                  <div>
+                     <button data-val="-1">➖</button>
+                     <div class="letter">Ψ</div>
+                     <button data-val="1">➕</button>
+                  </div>
+                  <input value="0" readonly />
+               </td>
+               <td>
+                  <div>
+                     <button data-val="-1">➖</button>
+                     <div class="letter">Ω</div>
+                     <button data-val="1">➕</button>
+                  </div>
+                  <input value="0" readonly />
+               </td>
+               <td>
+                  <div>
+                     <button data-val="-1">➖</button>
+                     <div class="letter">Θ</div>
+                     <button data-val="1">➕</button>
+                  </div>
+                  <input value="0" readonly />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <script>
+         $(() => {
+            $(document).on('click', '.songs td', (ev) => {
+               ev.target.classList.toggle('active');
+            });
+            $(document).on('click', 'button', (ev) => {
+               const btn = $(ev.target);
+               const input = btn.closest('td').find('input');
+               const value = input.val() - -100 * btn.data('val');
+               input.val(value);
+            });
+            $('.songs').hide();
+            $(document).on('click', '.s-1', () => {
+               $('.tab-1').show();
+               $('.tab-2').hide();
+               $('.s-1').addClass('active');
+               $('.s-2').removeClass('active');
+            });
+            $(document).on('click', '.s-2', () => {
+               $('.tab-2').show();
+               $('.tab-1').hide();
+               $('.s-2').addClass('active');
+               $('.s-1').removeClass('active');
+            });
+         });
+      </script>
+   </body>
+</html>

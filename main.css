@@ -1,0 +1,102 @@
+body {
+   margin: 0;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+table {
+   width: 100%;
+   font-size: 200%;
+   border-collapse: collapse;
+}
+
+body {
+   background-image: linear-gradient(to right, #0b95, #9c34);
+}
+
+.songs td,
+.songs th {
+   border: solid 2px #4a4;
+   font-weight: bold;
+   padding: 15px;
+}
+
+.songs td {
+   height: calc(20vh - 50px);
+}
+
+td {
+   text-align: center;
+}
+
+th {
+   text-align: start;
+}
+
+td.active {
+   opacity: 0.5;
+}
+
+.score {
+   margin: 20px 0;
+}
+
+.score td > div {
+   display: flex;
+   justify-content: center;
+   padding: 0 10px;
+}
+
+.score td {
+   padding: 0 10px;
+}
+
+input {
+   margin-top: 10px;
+   font-size: 150%;
+   width: 100%;
+   text-align-last: center;
+   text-align: center;
+}
+
+button {
+   background: #fffa;
+   border-radius: 50px;
+   border: solid 1px;
+   width: 60px;
+   height: 60px;
+}
+
+.letter {
+   width: 50px;
+   text-align: center;
+}
+
+body,
+.stages {
+   display: flex;
+}
+
+body > div,
+.letter {
+   margin: auto;
+}
+
+button:active {
+   background-color: #afaa;
+}
+
+.stages {
+   justify-content: center;
+   padding: 10px;
+   gap: 20px;
+}
+
+.stages button {
+   width: 20vw;
+   font-weight: bold;
+}
+
+.stage.active {
+   background-image: linear-gradient(to right, #00b09b, #96c93d);
+   color: white;
+}
